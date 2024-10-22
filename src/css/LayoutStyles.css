@@ -1,0 +1,4 @@
+/* src/css/LayoutStyles.css */
+.layout .main-content {
+    padding-top: 60px; /* Space for the navbar, adjust based on your navbar's actual height */
+}

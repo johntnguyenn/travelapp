@@ -1,0 +1,241 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Container and overall layout styles */
+.create-screen-container {
+    padding-top: 20px; /* Reduce top padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Styles specific to the section displaying landmarks */
+.explore-section {
+    text-align: center; /* Center the Explore title and content */
+    margin-bottom: 30px; /* Space before listing points of interest */
+    width: 75%; /* Main content width adjusted */
+    margin: 0 auto; /* Center the section horizontally */
+    padding-top: 100px; /* Space above the content */
+    z-index: 1; /* Higher z-index to prevent overlap */
+}
+
+/* Styles for points of interest within the explore section */
+.points-of-interest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center points of interest visually */
+    gap: 20px; /* Spacing between points */
+}
+
+/* Styles for individual points of interest */
+.point {
+    background-color: #eef;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px; /* Fixed width for uniformity */
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* General styling for list of activities, adjusting padding and layout */
+.activities-list {
+    display: flex; /* Ensure flexbox layout to manage children easily */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Spacing between items */
+    padding: 20px; /* Padding around the entire list */
+    width: 100%; /* Full width to match container */
+    margin-top: 30px; /* Ensure it doesn't overlap with explore-section */
+}
+
+.activity {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Align items to the center */
+    width: 90%; /* Relative width to parent container */
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Required for absolute positioning of the icon */
+    margin-bottom: 20px; /* Space between cards */
+}
+
+.activity-image {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    object-fit: cover;
+}
+
+.activity-info {
+    flex-grow: 1; /* Ensure it takes the available space */
+    margin-right: 20px; /* Space between info and icon */
+}
+
+.activity-header {
+    width: 100%; /* Full width of the activity card */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure spacing and alignment */
+}
+
+/* Sidebar styles for displaying the itinerary */
+.itinerary-sidebar {
+    width: 25%; /* Sidebar width */
+    position: fixed; /* Fix position on the side */
+    left: 0px; /* Align to the left side */
+    top: 60px; /* Adjusted to start right below the navbar */
+    bottom: 0; /* Extend to the bottom of the viewport */
+    background-color: #f9f9f9;
+    overflow-y: auto; /* Enable scrolling for long lists */
+    padding: 20px;
+    border-right: 2px solid #ddd; /* Visual separation from content */
+}
+
+/* Styles for individual itinerary items */
+.itinerary-item {
+    background-color: #eef;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.itinerary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itinerary-header > div {
+    display: flex;
+    gap: 5px; /* Reduced space between buttons */
+}
+
+.save-button, .clear-button {
+    padding: 5px 15px;
+    background-color: #007BFF; /* Example color, adjust as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px; /* Adjust this value as needed */
+}
+
+.activity {
+    position:relative;
+    padding-bottom: 30px; /* Make space for the slider dots */
+}
+
+/* Stylizing <details> and <summary> as cards */
+.itinerary-details {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    cursor: pointer;
+}
+
+.itinerary-details[open] {
+    background-color: #f1f1f1;
+}
+
+.itinerary-details summary {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Sidebar styles for displaying the itinerary */
+.itinerary-sidebar {
+    width: 25%; /* Sidebar width */
+    position: fixed; /* Fix position on the side */
+    left: 0px; /* Align to the left side */
+    top: 60px; /* Adjusted to start right below the navbar */
+    bottom: 0; /* Extend to the bottom of the viewport */
+    background-color: #f9f9f9;
+    overflow-y: auto; /* Enable scrolling for long lists */
+    padding: 20px;
+    border-right: 2px solid #ddd; /* Visual separation from content */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center; /* Center the tabs */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: transparent; /* Background color for tabs */
+    z-index: 100; /* Ensure tabs are on top */
+    margin-top: 60px; /* Position right below the navbar */
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 10px; /* Space between tabs */
+    color: black;
+    background-color: #f1f1f1; /* Background color for tabs */
+    border: none; /* Remove default borders */
+    border-radius: 5px; /* Rounded corners for tabs */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.tab.active {
+    border-bottom: 3px solid #007BFF; /* Blue bottom border for active tab */
+    font-weight: bold;
+    background-color: white; /* Highlight active tab */
+}
+
+.dropdown-icon {
+    cursor: pointer;
+    font-size: 16px; /* Adjust icon size */
+    position: absolute; /* Position it relative to its parent */
+    right: 10px; /* Distance from the right edge */
+    top: 10px; /* Distance from the top */
+}
+
+.maps-sidebar {
+    width: 25%; /* Same width as the itinerary sidebar */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fixed position to stay in place on scroll */
+    right: 0; /* Align to the right side */
+    top: 60px; /* Start below the navbar */
+    background-color: #f9f9f9; /* Matching background color */
+    border-left: 2px solid #ddd; /* Solid line to separate from content */
+    overflow-y: auto; /* Scrollable content */
+    padding: 20px; /* Standard padding */
+    display: flex; /* Flexbox for inner layout */
+    flex-direction: column; /* Vertical stacking */
+    justify-content: center; /* Center content vertically for aesthetics */
+    align-items: center; /* Center content horizontally */
+    z-index: 20; /* Ensure it's above most other content but below modal/popups */
+}
+
+/* Adjustment for the main content area to prevent overlap with new sidebar */
+.main-content {
+    display: flex;
+    justify-content: space-between; /* Space between main content and sidebar */
+    align-items: flex-start; /* Align items at the top */
+    padding: 0 25%; /* Padding on both sides to account for sidebars */
+    width: 50%; /* Adjusted width to allow space for both sidebars */
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0 10%; /* Less padding on smaller screens */
+        width: 80%; /* Larger main content area on smaller screens */
+    }
+
+    .maps-sidebar,
+    .itinerary-sidebar {
+        display: none; /* Hide sidebars on very small screens */
+    }
+}

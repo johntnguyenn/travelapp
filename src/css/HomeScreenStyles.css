@@ -1,0 +1,140 @@
+/* HomeScreenStyles.css */
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: black; /* Background color */
+}
+
+.content {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.fade-in { opacity: 1; }
+.fade-out { opacity: 0; }
+
+.header {
+    font-size: 71px;
+    color: white;
+    border: 10px black;
+    margin-bottom: 10px;
+}
+
+.sub-header {
+    font-size: 24px;
+    color: white;
+    border: 10px black;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px; /* Reduce margin to bring date pickers closer */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.63);
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    pointer-events: none;
+} 
+
+.date-picker-container {
+    display: flex;
+    justify-content: space-between;
+    width: 30%; /* Match the width of the search container */
+    margin: 0 auto 20px; /* Align center and provide bottom margin */
+}
+
+.date-picker-container input {
+    position: relative;
+    width: 70%; 
+    padding: 10px 30px 10px 30px; 
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.63);
+}
+
+.date-picker-icon {
+    position: absolute;
+    left: 10px;  
+    top: 50%;    
+    transform: translateY(-50%);  
+    color: black;
+    pointer-events: none;  
+}
+
+.create-button {
+    display: block;
+    width: 12%; /* Shorter width */
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%; /* Position directly below the search input */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure dropdown appears above other content */
+    background-color: white; /* Background color for dropdown */
+    border: 1px solid #ccc; /* Border color similar to input field */
+    border-top: none; /* Remove the top border */
+    border-radius: 0 0 10px 10px; /* Rounded corners for the bottom */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    max-height: 300px; /* Limit the height of the dropdown */
+    overflow-y: auto; /* Enable scrolling if there are many suggestions */
+}
+
+.autocomplete-dropdown li {
+    padding: 10px; /* Padding within each suggestion */
+    list-style-type: none; /* Remove bullet points */
+    cursor: pointer; /* Indicates the items are clickable */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.autocomplete-dropdown li:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    color: #333; /* Darken text color slightly on hover */
+}
